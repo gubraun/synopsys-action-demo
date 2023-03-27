@@ -26,7 +26,7 @@ jobs:
       - name: Synopsys Application Security Testing
         uses: synopsys-sig/synopsys-action@main
         with:
-          bridge_download_url: ${{ env.MACOSX_BRIDGE_URL }}
+          bridge_download_url: ${{ env.WIN64_BRIDGE_URL }}
 
           coverity_url: ${{ secrets.COVERITY_URL }}
           coverity_user: ${{ secrets.COVERITY_USER }}
@@ -39,4 +39,4 @@ jobs:
           blackduck_scan_full: false
         env:
           DETECT_BLACKDUCK_RAPID_COMPARE_MODE: BOM_COMPARE_STRICT
-          MACOSX_BRIDGE_URL: "https://artifactory.internal.synopsys.com/artifactory/clops-local/clops.sig.synopsys.com/synopsys-bridge/0.1.229/synopsys-bridge-0.1.229-win64.zip"
+          WIN64_BRIDGE_URL: "https://artifactory.internal.synopsys.com/artifactory/clops-local/clops.sig.synopsys.com/synopsys-bridge/0.1.229/synopsys-bridge-0.1.229-win64.zip"
