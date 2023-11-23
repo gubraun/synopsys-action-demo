@@ -19,6 +19,7 @@ jobs:
           coverity_stream_name: ${{ github.event.repository.name }}-${{ github.ref_name }}
           coverity_policy_view: 'Outstanding Issues'
           coverity_local: true
+          coverity_install_directory: /usr/local/coverity
 
       - name: Coverity PR Scan
         if: ${{ github.event_name == 'pull_request' }}
@@ -31,4 +32,5 @@ jobs:
           coverity_stream_name: ${{ github.event.repository.name }}-${{ github.base_ref }}
           coverity_automation_prcomment: true
           coverity_local: true
+          coverity_install_directory: /usr/local/coverity
           github_token: ${{ secrets.GITHUB_TOKEN }} # Mandatory when coverity_automation_prcomment is set to 'true'             
